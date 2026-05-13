@@ -1,0 +1,17 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input type="text" id="search" formControlName="search" placeholder="Search" />
+
+    <select id="in_theme_id" formControlName="in_theme_id">
+        <option value="">Any Theme</option>
+        @for (theme of themes; track theme.id) {
+            <option [value]="theme.id">{{ theme.name }}</option>
+        }
+    </select>
+
+    <select id="ordering" formControlName="ordering">
+        <option value="name">By Name</option>
+        <option value="num_parts">By Number of Parts</option>
+    </select>    
+    
+    <button type="submit">Search</button>
+</form>

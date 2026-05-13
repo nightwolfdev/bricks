@@ -1,0 +1,13 @@
+@let p = pagination();
+
+@if (p && p.count > 0) {
+    <div class="pagination">
+        @if (p?.previous) {
+            <button (click)="previousPage()">&laquo; Previous</button>
+        }
+        <span>{{ p.start | number }} - {{ p.end | number }} of {{ p.count | number }}</span>
+        @if (p?.next) {
+            <button (click)="nextPage()">Next &raquo;</button>
+        }
+    </div>
+}

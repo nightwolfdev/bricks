@@ -1,0 +1,40 @@
+@let data = data$ | async;
+
+@if (data) {
+    <h1>{{ data.set.name }}</h1>
+
+    <div class="set-details">
+        <div class="field-container">
+            <div class="field-label">Set Number</div>
+            <div class="field-value">{{ data.set.set_num }}</div>
+        </div>   
+        <div class="field-container">
+            <div class="field-label">Theme</div>
+            <div class="field-value">{{ data.theme?.name }}</div>
+        </div>  
+        <div class="field-container">
+            <div class="field-label">Released</div>
+            <div class="field-value">{{ data.set.year }}</div>
+        </div>
+        <div class="field-container">
+            <div class="field-label">Number of Pieces</div>
+            <div class="field-value">{{ data.set.num_parts | number }}</div>
+        </div>
+        <div class="field-container">
+            <div class="field-label">Market Value</div>
+            <div class="field-value">
+                <a target="_blank" [href]="'https://www.brickeconomy.com/set/' + data.set.set_num + '/'">BrickEconomy</a>, 
+                <a target="_blank" [href]="'https://www.bricklink.com/catalogPG.asp?S=' + data.set.set_num">BrickLink</a>
+            </div>
+        </div>   
+    </div>    
+
+    <div class="container">
+        <img [src]="data.set.set_img_url ?? noPhotoUrl" [alt]="data.set.name" />
+    </div>
+
+    <app-set-minifigs [set]="data.set" />
+    <app-set-parts [set]="data.set" />
+} @else {
+    <p>Loading set...</p>
+}

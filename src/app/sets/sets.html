@@ -1,0 +1,26 @@
+<div class="subheader">
+    <h1>{{ theme?.name }} Sets</h1>
+    <app-set-search />
+</div>
+
+@if (loading()) {
+    <p>Loading sets...</p>
+}
+
+@if (searchResponse()) {
+    <app-pagination [pagination]="pagination()" />
+
+    <div class="grid-container">
+        @for (set of searchResponse()?.results; track set.set_num) {
+            @defer (on viewport) {
+                <app-set-card [set]="set" class="grid-item" />
+            } @placeholder {
+                <div class="card-skeleton grid-item">Loading...</div>
+            }
+        } @empty {
+            <p>No sets found</p>
+        }
+    </div>
+    
+    <app-pagination [pagination]="pagination()" />
+}

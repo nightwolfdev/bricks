@@ -1,0 +1,41 @@
+@let response = partsResponse();
+
+@if (response && response.results.length > 0) {
+    <h2>Parts</h2>
+}
+
+@if (loading()) {
+    <p>Loading parts...</p>
+} @else {
+    @if (response && response.results.length > 0) {
+        <ng-template #pages let-p>
+            @if (p && p.count > 0) {
+                <div class="pagination">
+                    @if (p?.previous) {
+                        <button (click)="previousPage()">&laquo; Previous</button>
+                    }
+                    <span>{{ p.start | number }} - {{ p.end | number }} of {{ p.count | number }}</span>
+                    @if (p?.next) {
+                        <button (click)="nextPage()">Next &raquo;</button>
+                    }
+                </div>
+            }
+        </ng-template>
+
+        <ng-container *ngTemplateOutlet="pages; context: { $implicit: pagination() }" />
+
+        <div class="grid-container">
+            @for (setPart of partsResponse()?.results; track setPart.part.part_num) {
+                @defer (on viewport) {
+                    <app-set-part-card [setPart]="setPart" class="grid-item" />
+                } @placeholder {
+                    <div class="card-skeleton grid-item">Loading...</div>
+                }
+            } @empty {
+                <p>No parts found</p>
+            }
+        </div>
+
+        <ng-container *ngTemplateOutlet="pages; context: { $implicit: pagination() }" />
+    }
+}

@@ -1,1 +1,23 @@
-<router-outlet />
+<div id="app">
+    <header>
+        <a routerLink="/themes" class="title">Bricks</a>
+        <nav>
+            @for (link of navigationLinks; track link) {
+                <a
+                    [routerLink]="link.routerLink"
+                    routerLinkActive="active">
+                    {{ link.text }}
+                </a>
+            }
+        </nav>
+    </header>
+
+    <div id="content">
+        <router-outlet />
+    </div>
+
+    <footer>
+        <span>Developed by <a target="_blank" href="https://nightwolf.dev">NightWolf</a></span>
+        <span>Data provided by <a target="_blank" href="https://rebrickable.com/api/">Rebrickable API</a></span>
+    </footer>
+</div>

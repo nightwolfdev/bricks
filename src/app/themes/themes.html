@@ -1,0 +1,7 @@
+<div class="grid-container">
+    @for (theme of themes; track theme.id) {
+        <app-theme-card [theme]="theme" class="grid-item" />
+    } @empty {
+        <p>No themes found</p>
+    }
+</div>

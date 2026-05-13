@@ -1,0 +1,13 @@
+@let t = theme();
+
+<div class="card theme-card">
+    <div>
+        <img [src]="'/images/themes/' + t.id + '.jpg'" [alt]="t.name" />
+        <h2>{{ t.name }}</h2>
+        <p>{{ t.description }}</p>
+    </div>
+    <div class="card-actions">
+        <a routerLink="/sets/" [queryParams]="{ ordering: '-year', page: 1, page_size: 25, theme_id: t.id }">View Sets</a>
+        <a routerLink="/minifigs/" [queryParams]="{ ordering: 'name', page: 1, page_size: 25, in_theme_id: t.id }">View Minifigs</a>
+    </div>
+</div>

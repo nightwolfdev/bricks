@@ -1,0 +1,28 @@
+.container {
+    margin-bottom: 16px;
+
+    img {
+        aspect-ratio: 1 / 1;
+        max-height: 600px;
+        object-fit: contain;
+        width: 100%;
+    }
+}
+
+.set-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    .field-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+
+        .field-label {
+            font-weight: bold;
+        }
+    }
+}

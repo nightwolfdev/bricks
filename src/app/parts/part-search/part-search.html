@@ -1,0 +1,19 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input type="text" id="search" formControlName="search" placeholder="Search" />
+
+    <select id="part_cat_id" formControlName="part_cat_id">
+        <option value="">Any Category</option>
+        @for (partCategory of partCategories(); track partCategory.id) {
+            <option [value]="partCategory.id">{{ partCategory.name }}</option>
+        }
+    </select>
+
+    <select id="color_id" formControlName="color_id">
+        <option value="">Any Color</option>
+        @for (color of partColors(); track color.id) {
+            <option [value]="color.id">{{ color.name }}</option>
+        }
+    </select>    
+    
+    <button type="submit">Search</button>
+</form>

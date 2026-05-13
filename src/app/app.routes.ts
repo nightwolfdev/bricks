@@ -1,20 +1,30 @@
 import { Routes } from '@angular/router';
 
-import { Home } from './home/home';
+import { Themes } from './themes/themes';
 
 export const routes: Routes = [
     {
-        path: 'colors',
-        loadChildren: () => import('./colors/color-routes').then(r => r.routes),
-        title: 'Colors'
+        path: 'themes',
+        component: Themes,
+        title: 'Themes'
     },
     {
-        path: 'home',
-        component: Home,
-        title: 'Bricks'
+        path: 'minifigs',
+        loadChildren: () => import('./minifigs/minifig-routes').then(r => r.routes),
+        title: 'Minifigs'
+    },
+    {
+        path: 'sets',
+        loadChildren: () => import('./sets/set-routes').then(r => r.routes),
+        title: 'Sets'
+    },
+    {
+        path: 'parts',
+        loadChildren: () => import('./parts/part-routes').then(r => r.routes),
+        title: 'Parts'
     },
     {
         path: '**',
-        redirectTo: 'home'
+        redirectTo: 'themes'
     }
 ];

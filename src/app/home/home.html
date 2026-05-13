@@ -1,8 +1,0 @@
-<div class="theme-container">
-    @for (theme of themes; track theme.id) {
-        <div class="theme">
-            <img [src]="'/images/themes/' + theme.id + '.webp'" [alt]="theme.name">
-            {{ theme.name }}
-        </div>
-    }
-</div>

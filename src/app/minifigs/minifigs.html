@@ -1,0 +1,26 @@
+<div class="subheader">
+    <h1>{{ theme?.name }} Minifigs</h1>
+    <app-minifig-search />
+</div>
+
+@if (loading()) {
+    <p>Loading minifigs...</p>
+}
+
+@if (searchResponse()) {
+    <app-pagination [pagination]="pagination()" />
+
+    <div class="grid-container">
+        @for (minifig of searchResponse()?.results; track minifig.set_num) {
+            @defer (on viewport) {
+                <app-minifig-card [minifig]="minifig" class="grid-item" />
+            } @placeholder {
+                <div class="card-skeleton grid-item">Loading...</div>
+            }
+        } @empty {
+            <p>No minifigs found</p>
+        }
+    </div>
+    
+    <app-pagination [pagination]="pagination()" />
+}

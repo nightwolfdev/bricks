@@ -1,0 +1,26 @@
+<div class="subheader">
+    <h1>Parts</h1>
+    <app-part-search />
+</div>
+
+@if (loading()) {
+    <p>Loading parts...</p>
+}
+
+@if (searchResponse()) {
+    <app-pagination [pagination]="pagination()" />
+
+    <div class="grid-container">
+        @for (part of searchResponse()?.results; track part.part_num) {
+            @defer (on viewport) {
+                <app-part-card [part]="part" class="grid-item" />
+            } @placeholder {
+                <div class="card-skeleton grid-item">Loading...</div>
+            }
+        } @empty {
+            <p>No parts found</p>
+        }
+    </div>
+
+    <app-pagination [pagination]="pagination()" />
+}

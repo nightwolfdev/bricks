@@ -1,0 +1,19 @@
+@let setMinifigResponse = setMinifigResponse$ | async;
+
+@if (setMinifigResponse) {
+    @if (setMinifigResponse.results.length > 0) {
+        <h2>Minifigs</h2>
+
+        <div class="grid-container">
+            @for (minifig of setMinifigResponse.results; track minifig.set_num) {
+                @defer (on viewport) {
+                    <app-set-minifig-card [setMinifig]="minifig" class="grid-item" />
+                } @placeholder {
+                    <div class="card-skeleton grid-item">Loading...</div>
+                }
+            }
+        </div>
+    }
+} @else {
+    <p>Loading minifigs...</p>
+}
