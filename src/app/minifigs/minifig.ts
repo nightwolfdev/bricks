@@ -1,11 +1,25 @@
 import { FormControl } from "@angular/forms";
 
+import { Part } from '../parts/part';
+import { Set } from '../sets/set';
 import { toNumber, toString } from "../shared/utils";
 
 export const defaultMinifigQueryParams = {
     ordering: 'name',
     page: 1,
     page_size: 25
+}
+
+export interface MinifigPart {
+    part: Part;
+    quantity: number;
+}
+
+export interface MinifigPartResponse {
+    count: number;
+    next: string | null;
+    previous: string | null;
+    results: MinifigPart[];
 }
 
 export interface MinifigSearchCriteria {
@@ -41,6 +55,13 @@ export interface MinifigSearchResponse {
     next: string | null;
     previous: string | null;
     results: Minifig[];
+}
+
+export interface MinifigSetResponse {
+    count: number;
+    next: string | null;
+    previous: string | null;
+    results: Set[];
 }
 
 export interface Minifig {

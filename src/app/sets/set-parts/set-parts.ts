@@ -1,8 +1,8 @@
 import { DecimalPipe, NgTemplateOutlet } from '@angular/common';
 import { Component, computed, DestroyRef, inject, input, OnInit, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-
 import { Params } from '@angular/router';
+
 import { buildPagination, extractQueryParams } from '../../shared/utils';
 import { Set, SetPartResponse } from '../set';
 import { SetsApi } from '../sets-api';

@@ -1,0 +1,21 @@
+@let minifigPartResponse = minifigPartResponse$ | async;
+
+@if (minifigPartResponse) {
+    @if (minifigPartResponse.results.length > 0) {
+        <h2>Parts</h2>
+
+        <div class="grid-container">
+            @for (part of minifigPartResponse.results; track part.part.part_num) {
+                @defer (on viewport) {
+                    <app-minifig-part-card [minifigPart]="part" class="grid-item" />
+                } @placeholder {
+                    <div class="card-skeleton grid-item">Loading...</div>
+                }
+            } @empty {
+                <p>No parts found</p>
+            }
+        </div>
+    }
+} @else {
+    <p>Loading parts...</p>
+}

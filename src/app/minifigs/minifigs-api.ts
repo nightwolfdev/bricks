@@ -7,7 +7,7 @@ import { filter, finalize, switchMap, tap } from 'rxjs';
 
 import { host } from '../../api';
 import { buildQueryParams, mapQueryParams } from '../shared/utils';
-import { Minifig, MinifigSearchCriteria, minifigSearchCriteriaSchema, MinifigSearchResponse } from './minifig';
+import { Minifig, MinifigPartResponse, MinifigSearchCriteria, minifigSearchCriteriaSchema, MinifigSearchResponse, MinifigSetResponse } from './minifig';
 
 @Injectable({
     providedIn: 'root'
@@ -40,6 +40,14 @@ export class MinifigsApi {
 
     getMinifigById(id: string) {
         return this.http.get<Minifig>(`${host}/minifigs/${id}/`);
+    }
+
+    getPartsByMinifigId(id: string) {
+        return this.http.get<MinifigPartResponse>(`${host}/minifigs/${id}/parts/`);
+    }
+
+    getSetsByMinifigId(id: string) {
+        return this.http.get<MinifigSetResponse>(`${host}/minifigs/${id}/sets/`);
     }
 
     search(params: Params) {

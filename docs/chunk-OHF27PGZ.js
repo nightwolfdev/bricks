@@ -1,1 +1,0 @@
-import"./chunk-2NFLSA4Y.js";var o=[{path:":id",loadComponent:()=>import("./chunk-IP2YPRZM.js").then(t=>t.SetView),title:"View Set"},{path:"",loadComponent:()=>import("./chunk-UBTRJEOA.js").then(t=>t.Sets)}];export{o as routes};

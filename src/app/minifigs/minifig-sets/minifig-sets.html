@@ -1,0 +1,21 @@
+@let minifigSetResponse = minifigSetResponse$ | async;
+
+@if (minifigSetResponse) {
+    @if (minifigSetResponse.results.length > 0) {
+        <h2>Sets</h2>
+
+        <div class="grid-container">
+            @for (set of minifigSetResponse.results; track set.set_num) {
+                @defer (on viewport) {
+                    <app-minifig-set-card [minifigSet]="set" class="grid-item" />
+                } @placeholder {
+                    <div class="card-skeleton grid-item">Loading...</div>
+                }
+            } @empty {
+                <p>No sets found</p>
+            }
+        </div>
+    }
+} @else {
+    <p>Loading sets...</p>
+}

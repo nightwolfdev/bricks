@@ -1,0 +1,18 @@
+@let s = minifigSet();
+
+<div class="card">
+    <div>
+        <a [routerLink]="['/sets', s.set_num]">
+            <img [src]="minifigSetImage()" [alt]="s.name" />
+        </a>
+        <h2>
+            <a [routerLink]="['/sets', s.set_num]">
+                {{ s.name }}
+            </a>
+        </h2>
+        <div class="card-meta">
+            <span>{{ s.set_num }}</span>
+            <span>{{ s.num_parts | number }}</span>
+        </div>  
+    </div>  
+</div>

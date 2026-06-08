@@ -1,0 +1,25 @@
+@let data = data$ | async;
+
+@if (data) {
+    <h1>{{ data.minifig.name }}</h1>
+
+    <div class="minifig-details">
+        <div class="field-container">
+            <div class="field-label">Minifig Number</div>
+            <div class="field-value">{{ data.minifig.set_num }}</div>
+        </div>   
+        <div class="field-container">
+            <div class="field-label">Number of Pieces</div>
+            <div class="field-value">{{ data.minifig.num_parts | number }}</div>
+        </div>
+    </div>    
+
+    <div class="container">
+        <img [src]="data.minifig.set_img_url ?? noPhotoUrl" [alt]="data.minifig.name" />
+    </div>
+
+    <app-minifig-parts [minifig]="data.minifig" />
+    <app-minifig-sets [minifig]="data.minifig" />
+} @else {
+    <p>Loading minifig...</p>
+}

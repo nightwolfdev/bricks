@@ -1,0 +1,17 @@
+.pagination {
+    align-items: center;
+    display: flex;
+    gap: 16px;
+    justify-content: end;
+    margin: 16px 0;
+
+    button {
+        background-color: unset;
+        color: var(--primary-color);
+        text-transform: uppercase;
+
+        &:hover {
+            color: var(--secondary-color);
+        }
+    }
+}

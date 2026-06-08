@@ -1,0 +1,15 @@
+@let p = minifigPart();
+
+<div class="card">
+    <div>
+        <img [src]="minifigPartImage()" [alt]="p.part.name" />
+        <h2>{{ p.part.name }}</h2>
+        <div class="card-meta">
+            <span>{{ p.part.part_num }}</span>
+            <span>{{ p.quantity | number }}</span>
+        </div>
+        <div class="card-meta">
+            <span>{{ minifigPartCategory()?.name }}</span>
+        </div>  
+    </div>  
+</div>
