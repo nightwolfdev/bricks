@@ -1,0 +1,1 @@
+import"./chunk-2NFLSA4Y.js";var t=[{path:":id",loadComponent:()=>import("./chunk-OML7XW7V.js").then(i=>i.MinifigView),title:"View Minifig"},{path:"",loadComponent:()=>import("./chunk-QQVEVH4V.js").then(i=>i.Minifigs)}];export{t as routes};

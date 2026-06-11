@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import { noPhotoUrl } from '../../shared/utils';
 import { Part } from '../part';
@@ -6,7 +7,7 @@ import { PartsApi } from '../parts-api';
 
 @Component({
     selector: 'app-part-card',
-    imports: [],
+    imports: [RouterLink],
     templateUrl: './part-card.html',
     styleUrl: './part-card.scss',
     changeDetection: ChangeDetectionStrategy.OnPush
