@@ -2,8 +2,14 @@
 
 <div class="card">
     <div>
-        <img [src]="setPartImage()" [alt]="p.part.name" />
-        <h2>{{ p.part.name }}</h2>
+        <a [routerLink]="['/parts', p.part.part_num]">
+            <img [src]="setPartImage()" [alt]="p.part.name" />
+        </a>
+        <h2>
+            <a [routerLink]="['/parts', p.part.part_num]">
+                {{ p.part.name }}
+            </a>
+        </h2>
         <div class="card-meta">
             <span>{{ p.part.part_num }}</span>
             <span>{{ p.quantity | number }}</span>

@@ -18,8 +18,8 @@ export class PartSearch implements OnInit {
     private route = inject(ActivatedRoute);
     private router = inject(Router);
 
+    colors = this.partsApi.colors;
     partCategories = this.partsApi.partCategories;
-    partColors = this.partsApi.partColors;
     form: FormGroup<PartSearchFormControls>;
 
     constructor() {

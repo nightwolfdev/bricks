@@ -1,0 +1,8 @@
+@let c = partColor();
+
+<div class="card">
+    <div>
+        <div [style.backgroundColor]="'#' + c.rgb" class="swatch"></div>
+        <h2>{{ c.color_name }}</h2>
+    </div>  
+</div>

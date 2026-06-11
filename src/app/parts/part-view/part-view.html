@@ -1,0 +1,24 @@
+@let data = data$ | async;
+
+@if (data) {
+    <h1>{{ data.part.name }}</h1>
+
+    <div class="part-details">
+        <div class="field-container">
+            <div class="field-label">Part Number</div>
+            <div class="field-value">{{ data.part.part_num }}</div>
+        </div>
+        <div class="field-container">
+            <div class="field-label">Category</div>
+            <div class="field-value">{{ data.category?.name }}</div>
+        </div>        
+    </div>    
+
+    <div class="container">
+        <img [src]="data.part.part_img_url" [alt]="data.part.name" />
+    </div>
+
+    <app-part-colors [part]="data.part" />
+} @else {
+    <p>Loading part...</p>
+}

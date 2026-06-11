@@ -8,6 +8,19 @@ export const defaultPartQueryParams = {
     page_size: 25
 }
 
+export interface Color {
+    id: number;
+    name: string;
+    rgb: string;
+}
+
+export interface ColorResponse {
+    count: number;
+    next: string | null;
+    previous: string | null;
+    results: Color[];
+}
+
 export interface PartSearchCriteria {
     color_id?: number;
     ordering: string;
@@ -65,9 +78,11 @@ export interface PartCategoryResponse {
 }
 
 export interface PartColor {
-    id: number;
-    name: string;
-    rgb: string;
+    color_id: number;
+    color_name: string;
+    num_sets: number;
+    num_set_parts: number;
+    rgb?: string;
 }
 
 export interface PartColorResponse {

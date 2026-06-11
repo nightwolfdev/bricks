@@ -1,0 +1,21 @@
+@let partColorResponse = partColorResponse$ | async;
+
+@if (partColorResponse) {
+    @if (partColorResponse.results.length > 0) {
+        <h2>Colors</h2>
+
+        <div class="grid-container">
+            @for (color of partColorResponse.results; track color.color_id) {
+                @defer (on viewport) {
+                    <app-part-color-card [partColor]="color" class="grid-item" />
+                } @placeholder {
+                    <div class="card-skeleton grid-item">Loading...</div>
+                }
+            } @empty {
+                <p>No colors found</p>
+            }
+        </div>
+    }
+} @else {
+    <p>Loading colors...</p>
+}

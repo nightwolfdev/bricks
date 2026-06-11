@@ -10,7 +10,7 @@
 
     <select id="color_id" formControlName="color_id">
         <option value="">Any Color</option>
-        @for (color of partColors(); track color.id) {
+        @for (color of colors(); track color.id) {
             <option [value]="color.id">{{ color.name }}</option>
         }
     </select>    
