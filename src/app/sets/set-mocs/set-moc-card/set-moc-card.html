@@ -1,0 +1,18 @@
+@let m = setMoc();
+
+<div class="card">
+    <div>
+        <a target="_blank" [href]="m.moc_url">
+            <img [src]="setMocImage()" [alt]="m.name" />
+        </a>
+        <h2>
+            <a target="_blank" [href]="m.moc_url">
+                {{ m.name }}
+            </a>
+        </h2>
+    </div>
+    <div class="card-meta">
+        <span>{{ m.designer_name }}</span>
+        <span>{{ m.num_parts | number }} pcs</span>
+    </div>
+</div>

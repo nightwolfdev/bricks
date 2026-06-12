@@ -10,6 +10,7 @@ import { Theme } from '../../themes/theme';
 import { ThemesApi } from '../../themes/themes-api';
 import { Set } from '../set';
 import { SetMinifigs } from '../set-minifigs/set-minifigs';
+import { SetMocs } from '../set-mocs/set-mocs';
 import { SetParts } from '../set-parts/set-parts';
 import { SetsApi } from '../sets-api';
 
@@ -20,7 +21,7 @@ interface Data {
 
 @Component({
     selector: 'app-set-view',
-    imports: [AsyncPipe, DecimalPipe, SetMinifigs, SetParts],
+    imports: [AsyncPipe, DecimalPipe, SetMinifigs, SetMocs, SetParts],
     templateUrl: './set-view.html',
     styleUrl: './set-view.scss'
 })

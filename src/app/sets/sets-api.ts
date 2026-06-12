@@ -7,7 +7,7 @@ import { filter, finalize, switchMap, tap } from 'rxjs';
 
 import { host } from '../../api';
 import { buildQueryParams, mapQueryParams } from '../shared/utils';
-import { Set, SetMinifigResponse, SetPartResponse, SetSearchCriteria, setSearchCriteriaSchema, SetSearchResponse } from './set';
+import { Set, SetMinifigResponse, SetMocResponse, SetPartResponse, SetSearchCriteria, setSearchCriteriaSchema, SetSearchResponse } from './set';
 
 @Injectable({
     providedIn: 'root'
@@ -39,7 +39,11 @@ export class SetsApi {
     }
 
     getMinifigsBySetId(id: string) {
-        return this.http.get<SetMinifigResponse>(`${host}/sets/${id}/minifigs/`);
+        return this.http.get<SetMinifigResponse>(`${host}/sets/${id}/minifigs/?page_size=1000`);
+    }
+
+    getMocsBySetId(id: string) {
+        return this.http.get<SetMocResponse>(`${host}/sets/${id}/alternates/?page_size=1000`);
     }
 
     getPartsBySetId(id: string, params: Params) {

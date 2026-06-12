@@ -24,6 +24,25 @@ export interface SetMinifigResponse {
     results: SetMinifig[];
 }
 
+export interface SetMoc {
+    designer_name: string;
+    designer_url: string;
+    moc_img_url: string;
+    moc_url: string;
+    name: string;
+    num_parts: number;
+    set_num: string;
+    theme_id: number;
+    year: number;
+}
+
+export interface SetMocResponse {
+    count: number;
+    next: string | null;
+    previous: string | null;
+    results: SetMoc[];
+}
+
 export interface SetPart {
     part: Part;
     quantity: number;

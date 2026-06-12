@@ -1,0 +1,21 @@
+@let setMocResponse = setMocResponse$ | async;
+
+@if (setMocResponse) {
+    @if (setMocResponse.results.length > 0) {
+        <h2>Alternate Builds</h2>
+
+        <div class="grid-container">
+            @for (moc of setMocResponse.results; track moc.set_num) {
+                @defer (on viewport) {
+                    <app-set-moc-card [setMoc]="moc" class="grid-item" />
+                } @placeholder {
+                    <div class="card-skeleton grid-item">Loading...</div>
+                }
+            } @empty {
+                <p>No alternate builds found</p>
+            }
+        </div>
+    }
+} @else {
+    <p>Loading alternate builds...</p>
+}
