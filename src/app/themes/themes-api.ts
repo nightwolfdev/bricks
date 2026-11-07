@@ -80,6 +80,16 @@ export class ThemesApi {
             name: 'Super Mario'
         },
         {
+            description: 'One of the world\'s largest publishers of comics and graphic novels, DC has been inspiring and entertaining audiences since 1935 through enduring story-telling, iconic Super Heroes and infamous Super-Villains.',
+            id: 695,
+            name: 'DC'
+        },
+        {
+            description: 'Build something extraordinary and become your favorite hero with LEGO® | Marvel buildable playsets! Team up with other legendary Marvel characters, such as Iron Man, Thor, Spider-Man, Black Panther and many more, on daring missions to defeat super villains.',
+            id: 696,
+            name: 'Marvel'
+        },
+        {
             description: 'Pay homage to the iconic Caped Crusader™ and his pursuits against the bad guys in Gotham City™ with LEGO® DC Batman™ sets. Fans of all ages can recreate scenes from the memorable movies and comics with exciting role play adventures and authentically detailed vehicles.',
             id: 697,
             name: 'Batman'
@@ -105,6 +115,11 @@ export class ThemesApi {
             name: 'Dreamzzz'
         },
         {
+            description: 'Create and customize your own Animal Crossing™ world with these imaginative LEGO® sets inspired by the video game series. Build your own set of iconic locations like Nook\'s Cranny and the campsite. Role-play your own stories with characters Isabelle, Tom Nook, Kapp\'n, and more!',
+            id: 752,
+            name: 'Animal Crossing'
+        },
+        {
             description: 'Explore Hyrule as you recreate the exciting action and adventure from The Legend of Zelda™ video game series. Build two versions of the Great Deku Tree or leap into battle with Link and Princess Zelda as you face off with the brick-built Ganon. Featuring in-game pieces from the series, including the Master Sword, Hylian Shield and more.',
             id: 764,
             name: 'The Legend of Zelda'
@@ -115,9 +130,19 @@ export class ThemesApi {
             name: 'Fortnite'
         },
         {
+            description: 'From the hit TV Series, Wednesday, build and display one of the LEGO® Wednesday sets featuring Wednesday Addams, Enid and Thing.',
+            id: 768,
+            name: 'Wednesday'
+        },
+        {
             description: 'Feel your creativity flourish as you craft colorful, brick-built floral arrangements from the LEGO® Botanicals Collection. Whether creating your own unique home décor or gifting these forever flowers to friends and loved ones, LEGO Botanicals offer beautifully blooming builds.',
             id: 769,
             name: 'Botanicals'
+        },
+        {
+            description: 'Get ready to play with Bluey, Bingo, Chilli and Bandit! LEGO® Bluey sets bring the exciting world of the Heelers to life.',
+            id: 772,
+            name: 'Bluey'
         },
         {
             description: 'Embark on thrilling quests for epic treasure with the Straw Hat Pirates crew and LEGO® ONE PIECE sets. Fans of the manga series, smash-hit anime, and live-action sensation on Netflix will love role-playing with iconic characters in a chaotic ocean of creative building.',
